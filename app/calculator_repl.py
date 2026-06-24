@@ -46,12 +46,20 @@ def calculator_repl():
 
                 # History Input
                 if user_input == "history":
-                    if not calc_class.history:
-                        print("No calculations in history.")
+
+                    history = calc_class.show_history()
+                    if not history:
+                        print("No calculations in history")
                     else:
-                        print("Calculation History:")
-                        for entry in calc_class.history:
-                            print(f"  {entry}")
+                        print("\nCalculation History:")
+                        for i, entry in enumerate(history, 1):
+                            print(f"{i}. {entry}")
+                    continue
+
+                if user_input == 'clear':
+                    # Clear calculation history
+                    calc_class.clear_history()
+                    print("History cleared")
                     continue
 
                 # Clear Input

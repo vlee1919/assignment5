@@ -57,6 +57,7 @@ class Calculator:
         # Set up the logging system
         self._setup_logging()
 
+
         # Initialize calculation history and operation strategy
         self.history: List[Calculation] = []
         self.operation_strategy: Optional[Operation] = None
